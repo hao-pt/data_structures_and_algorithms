@@ -12,7 +12,7 @@ class MeetingRoom:
         '''
         # Approach 1: sort meetings by starting time and do schedule by brutte-force
         # M is number of meetings, N is minimum number of required rooms 
-        # Time complexity: Sorting: O(M*log(M)), meeting scheduling O(M*N) -> O(m*log(m))
+        # Time complexity: Sorting: O(M*log(M)), meeting scheduling O(M*N) -> O(M*log(M))
         # Space: O(N)
         rooms = {} 
         # sort meeting based on start
@@ -40,7 +40,7 @@ class MeetingRoom:
         
         # Approach 2: use extra priority queue to store earliest endTime so far
         # M is number of meetings, N is minimum number of required rooms 
-        # Time complexity: Sorting: O(M*log(M)), meeting scheduling O(M*log(N)) -> O(m*log(m))
+        # Time complexity: Sorting: O(M*log(M)), meeting scheduling O(M*log(N)) -> O(M*log(M))
         # Space: O(N)
         # sort meeting based on startTime
         time_intervals.sort(key=lambda meeting: meeting[0])
