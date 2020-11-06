@@ -48,9 +48,10 @@ class MeetingRoom:
         n = 1
         # meeting scheduling
         for i in range(1, len(time_intervals)):
-            # if meeting i has startTime greater than endTime of earliest meeting so far
+            # if meeting i has startTime less than endTime of earliest meeting so far
+            # this means 2 rooms overlap
             # allocate new room
-            if time_intervals[i][0] > pq[0]:
+            if time_intervals[i][0] < pq[0]:
                 n += 1
             else:
                 # reuse open room and update earliest endTime
